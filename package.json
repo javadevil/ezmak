@@ -1,0 +1,29 @@
+{
+  "name": "ezmak",
+  "version": "1.0.0",
+  "description": "Easy business in your hand",
+  "main": "application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javadevil/ezmak.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Mongodb",
+    "PM2",
+    "Business",
+    "Application"
+  ],
+  "author": "Wacharabuhm Tungketmukda",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/javadevil/ezmak/issues"
+  },
+  "homepage": "https://github.com/javadevil/ezmak#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

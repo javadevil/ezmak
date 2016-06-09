@@ -1,0 +1,7 @@
+{
+	"apps" : [{
+		"name" : "server",
+		"script" : "application.js",
+		"watch" : ["application.js"],
+ 	}]
+}
