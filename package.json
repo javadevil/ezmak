@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/javadevil/ezmak#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "mongodb": "^2.1.18"
   }
 }

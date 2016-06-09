@@ -2,6 +2,6 @@
 	"apps" : [{
 		"name" : "server",
 		"script" : "application.js",
-		"watch" : ["application.js"],
+		"ignore_watch" : ["node_modules"],
  	}]
 }

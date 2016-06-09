@@ -1,4 +1,7 @@
 {
+	"mongodb" : {
+		"url" : "mongodb://192.168.99.100:32770/ezmak"
+	},
 	"http" : {
 		"enabled" : true ,
 		"port" : 8080
