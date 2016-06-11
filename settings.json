@@ -1,6 +1,6 @@
 {
 	"mongodb" : {
-		"url" : "mongodb://192.168.99.100:32770/ezmak"
+		"url" : "mongodb://192.168.99.100:32768/ezmak"
 	},
 	"http" : {
 		"enabled" : true ,

@@ -2,6 +2,10 @@
 
 const settings = require('./settings.json');
 
+(function main() {
+	initDatabase();
+})();
+
 function initDatabase() {
 	console.log('Initialize database');
 	const MongoClient = require('mongodb').MongoClient;
@@ -23,8 +27,7 @@ function initServer(err,databasePool) {
 		return next();
 	});
 
-	application.all('/',demo);
-	application.use('/auth',require('./commons')());
+	application.use('/',require('./webapplication')());
 
 	if (settings.http.enabled) {
 		const http = require('http');
@@ -33,9 +36,3 @@ function initServer(err,databasePool) {
 		console.log('Listening HTTP @',port);
 	}
 }
-
-function demo(req,res){
-	return res.send('Ezmak 1.0.1');
-}
-
-initDatabase();

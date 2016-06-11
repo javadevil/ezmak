@@ -2,7 +2,9 @@
 	"apps" : [{
 		"name" : "server",
 		"script" : "application.js",
+		"exec_mode" : "cluster",
 		"watch" : true,
-		"ignore_watch" : ["node_modules","commons/views"],
+		"ignore_watch" : ["node_modules","webapplication"],
+		"log_date_format" : "YYYY-MM-DD HH:mm Z",
  	}]
 }
