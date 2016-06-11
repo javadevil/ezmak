@@ -1,19 +1,14 @@
 'use strict';
-let router = require('express').Router();
-module.exports = function index() {
-	
-	router.all("/",demo);
+module.exports = function() {
+	const router = require('express').Router();
+	const serv = require('serve-static');
+	const path = require('path');
 
+	router.use(serv(path.join(__dirname,'views'),{index:['index.html']}));
+	router.all('/test',demo);
 	return router;
 }
 
 function demo(req,res) {
-	let users = req.db.collection('users');
-	users.find({}).limit(1).next((err,doc)=>{
-		if (err) {
-			console.error(err);
-		}
-		return res.send('Hello, ' + doc.name);
-	})
-	//return res.send('ok');	
+	return res.send('it work!!');
 }
