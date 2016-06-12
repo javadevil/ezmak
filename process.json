@@ -3,7 +3,7 @@
 		"name" : "server",
 		"script" : "application.js",
 		"exec_mode" : "cluster",
-		"watch" : true,
+		"watch" : false,
 		"ignore_watch" : ["node_modules","webapplication"],
 		"log_date_format" : "YYYY-MM-DD HH:mm Z",
  	}]
