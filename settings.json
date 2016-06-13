@@ -1,4 +1,10 @@
 {
+	"auth" : {
+		"digest" : "sha512",
+		"iteration":100000,
+		"keylength":512,
+		"saltlength":32
+	},
 	"mongodb" : {
 		"url" : "mongodb://192.168.99.100:32768/ezmak"
 	},

@@ -26,6 +26,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "mongodb": "^2.1.18",
+    "read": "^1.0.7",
     "serve-static": "^1.11.0"
   }
 }

@@ -67,10 +67,10 @@ class Main extends Component {
           >
             1-2-3-4-5
           </Dialog>
-          <h1>Material-UI</h1>
-          <h2>example project</h2>
+          <h1>eZMak Project</h1>
+          <h2>Authentication</h2>
           <RaisedButton
-            label="Super Secret Password"
+            label="Login"
             secondary={true}
             onTouchTap={this.handleTouchTap}
           />
