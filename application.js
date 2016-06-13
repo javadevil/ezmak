@@ -1,34 +1,42 @@
 'use strict';
 
 const settings = require('./settings.json');
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 (function main() {
-	initDatabase();
+	initServer();
 })();
 
-function initDatabase() {
-	console.log('Initialize database');
-	const MongoClient = require('mongodb').MongoClient;
-	MongoClient.connect(settings.mongodb.url,initServer);
-}
-
-function initServer(err,databasePool) {
-	if (err) {
-		return console.error(err);
-	}
-
+function initServer() {
 	console.log('Initialize server');
 
 	const application = require('express')();
-	
-	//Database Injection
-	application.use((req,res,next)=>{
-		req.db = databasePool;
-		return next();
+
+	const store = MongoDBStore({
+		uri : settings.mongodb.uri,
+		collection : 'session'
 	});
 
-	application.use('/',require('./webapplication')());
+	application.use(session({
+		secret : settings.session.secret,
+		cookie : {
+        	maxAge : 1000 * 60 * 60 * 24 //one day
+      	},
+      	store : store,
+      	reSave : true,
+      	saveUninitialized : false
 
+	}));
+	application.use('/',require('./webapplication')());
+	application.all('/test',(req,res)=>{
+		if(req.session.count){
+			req.session.count += 1;
+		} else {
+			req.session.count = 1;
+		}
+		return res.send('Session:'+JSON.stringify(req.session));
+	})
 	if (settings.http.enabled) {
 		const http = require('http');
 		const port = settings.http.port || 8080;

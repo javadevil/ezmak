@@ -56,7 +56,7 @@ function hashPassword() {
 
 		crypto.pbkdf2(user.password,user.salt,settings.auth.iteration,settings.auth.keylength,settings.auth.digest,(err,key)=>{
 			user.password = key.toString('hex');
-
+			user.roles = ['admin'];
 			console.dir(user);
 			return store();
 		});

@@ -1,4 +1,7 @@
 {
+	"session" : {
+		"secret" : "87F1GyISlPH73w3xaNjSTCf254763XR6"
+	},
 	"auth" : {
 		"digest" : "sha512",
 		"iteration":100000,
@@ -6,7 +9,7 @@
 		"saltlength":32
 	},
 	"mongodb" : {
-		"url" : "mongodb://192.168.99.100:32768/ezmak"
+		"uri" : "mongodb://192.168.99.100:32768/ezmak"
 	},
 	"http" : {
 		"enabled" : true ,
