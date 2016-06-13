@@ -2,6 +2,7 @@
   "name": "EZMak-Webapplication",
   "version": "1.0.0",
   "description": "The simple EZMak Webui",
+  "main": "index.js",
   "scripts": {
     "start": "gulp"
   },
